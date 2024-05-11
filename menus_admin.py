@@ -1,4 +1,4 @@
-import funciones_globales as reutilizar
+import modulo_clientes_admin as reutilizar
 #----------------------------------------------------------------------------------
 #FUNCIONES DE MENUS PARA ADMIN
 def menu_admin():
@@ -164,17 +164,20 @@ def gestion_usuario():
     #1.1
 def registro_usuario():
     print("Se carga el usuario con los datos a el json para añadir sobre otro") #1
+    reutilizar.agregar_usuario()
     #1.2
 def modificacion_usuario():
     print("Se busca el usuario con los datos a el json para modificarlo sobre el que ya esta") #es mejor eliminarlo y volverlo a colocar
+    reutilizar.modificar_usuario()
     #1.3
 def eliminar_usuario():
     print("Se busca el usuario con los datos a el json para eliminarlo  sobre otro") #2
+    reutilizar.eliminar_cliente()
     
 #2
 def perfiles_usuario():
     print("Se busca el usuario con los datos a el json para mostrarlo en pantalla sobre el que ya esta") 
-    
+    reutilizar.mostrar_usuarios()
 #3
 def facturas():
     print("mostrar detalle de facturas de cada cliente")
@@ -182,6 +185,7 @@ def facturas():
 #4
 def pqr():
     print("genera pqr de un cliente")
+    print(reutilizar.generar_pqr())
 
 #estadisticas
 def estadistica():

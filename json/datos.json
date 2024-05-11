@@ -1,0 +1,57 @@
+[
+    {
+        "nombre": "erik",
+        "documento": "weqw",
+        "edad": "wqeqw",
+        "direccion": "qweqwe",
+        "ciudad": "wqeqw",
+        "categoria": "wqeqw",
+        "contrasena": "",
+        "pqr": [],
+        "servicios_adquiridos": [],
+        "productos_adquiridos": []
+    },
+    {
+        "nombre": "ereefe",
+        "documento": "232131",
+        "edad": "21",
+        "direccion": "12312312fcew we qwe",
+        "ciudad": "effe",
+        "categoria": "effe",
+        "contrasena": "",
+        "pqr": [],
+        "servicios_adquiridos": [],
+        "productos_adquiridos": []
+    },
+    {
+        "nombre": "grgegr",
+        "documento": "32434",
+        "edad": "32",
+        "direccion": "erg 332",
+        "ciudad": "eeve",
+        "categoria": "eeve",
+        "contrasena": "",
+        "pqr": [
+            "consulta de servicios",
+            "cancelacion de servicios",
+            "manejo de servicios",
+            "servicios",
+            "consulta factura",
+            "consulta"
+        ],
+        "servicios_adquiridos": [],
+        "productos_adquiridos": []
+    },
+    {
+        "nombre": "erik",
+        "documento": "qf",
+        "edad": "qweqw",
+        "direccion": "qweqwe",
+        "ciudad": "qwe",
+        "categoria": "qwe",
+        "contrasena": "",
+        "pqr": [],
+        "servicios_adquiridos": [],
+        "productos_adquiridos": []
+    }
+]

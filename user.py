@@ -1,4 +1,4 @@
-import funciones_globales as reutilizar
+import modulo_clientes_admin as reutilizar
 """def ingreso():
     
 def perfil():

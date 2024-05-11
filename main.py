@@ -1,7 +1,7 @@
 import json
 import user
-import admin
-import funciones_globales as funciones
+import menus_admin
+import modulo_clientes_admin as funciones
 
 #menu principal-------------------------------------------------------------------
 def menu_pricipal():
@@ -12,7 +12,7 @@ def menu_pricipal():
         opt=int(input("Ingrese una opcion : "))
         try:
             if opt==1:
-                admin.menu_admin()
+                menus_admin.menu_admin()
             elif opt==2:
                 user.menuUser()
             elif opt==3:
@@ -24,3 +24,6 @@ def menu_pricipal():
 
 
 menu_pricipal()
+
+
+#REVISAR ELIMINACION NO FUNCIONA CORRECTAMENTE
