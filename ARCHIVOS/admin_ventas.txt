@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------------------
+                                         VENTAS
+-------------------------------------------------------------------------------------------
+
+                            1.	Productos
+                            2.	Servicios
+                            3.	Registro de ventas(TIENE SUBMENU)
+                            4.	Modificar productos y servicios (TIENE SUBMENU)
+                            5.  BACKd3

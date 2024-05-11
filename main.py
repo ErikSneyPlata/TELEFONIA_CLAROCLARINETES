@@ -1,22 +1,26 @@
 import json
+import user
+import admin
+import funciones_globales as funciones
 
-from admin import *
-from user import *
+#menu principal-------------------------------------------------------------------
+def menu_pricipal():
 
-file = open("bienvenida.txt","r")
-print(file.read())
-file.close()
+    while True:
+        ruta_bienvenida ="ARCHIVOS\\bienvenida.txt"
+        funciones.lecturaArchivos(ruta_bienvenida)
+        opt=int(input("Ingrese una opcion : "))
+        try:
+            if opt==1:
+                admin.menu_admin()
+            elif opt==2:
+                user.menuUser()
+            elif opt==3:
+                break  
+        except:
+            print("\nla opcion que ingresaste no es valida\n")
+              
+#----------------------------------------------------------------------------------
 
-System = True
-while System ==True:
-    print("\n")
-    menu=int(input("                             Ingrese su eleccion: "))
-    if menu == 1:
-        print(" ")
-    elif menu == 2:
-        print(" ")
-    elif menu == 3:
-        print(" ")
-    else:
-        print("\n-------------------------Por favor ingresa una opcion valida-------------------------------")
-        
+
+menu_pricipal()

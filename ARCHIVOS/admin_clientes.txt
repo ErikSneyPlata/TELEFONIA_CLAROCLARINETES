@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------------------
+                                         CLIENTES
+-------------------------------------------------------------------------------------------
+
+                            1.	GESTION DE USUARIO (TIENE SUBMENU)
+                            2.	Perfiles usuarios (muestra información nombre, apellido, etc)
+                            3.	Facturas
+                            4.	PQR
+                            5.  salir
