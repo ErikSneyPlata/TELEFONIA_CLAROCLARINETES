@@ -9,19 +9,28 @@
         "contrasena": "",
         "pqr": [],
         "servicios_adquiridos": [],
-        "productos_adquiridos": []
+        "productos_adquiridos": [],
+        "productos adquirido": [
+            {
+                "nombre del servicio": "fgdf",
+                "codigo del servicio": "gdfg",
+                "precio": "dfgdfg",
+                "especificacion": "dfgdgf"
+            }
+        ]
     },
     {
-        "nombre": "ereefe",
+        "nombre": "nicolas",
         "documento": "232131",
-        "edad": "21",
-        "direccion": "12312312fcew we qwe",
-        "ciudad": "effe",
+        "edad": "",
+        "direccion": "",
+        "ciudad": "",
         "categoria": "effe",
         "contrasena": "",
         "pqr": [],
         "servicios_adquiridos": [],
-        "productos_adquiridos": []
+        "productos_adquiridos": [],
+        "categoria_cliente": ""
     },
     {
         "nombre": "grgegr",
@@ -43,15 +52,16 @@
         "productos_adquiridos": []
     },
     {
-        "nombre": "erik",
+        "nombre": "Erik",
         "documento": "qf",
-        "edad": "qweqw",
-        "direccion": "qweqwe",
-        "ciudad": "qwe",
+        "edad": "23",
+        "direccion": "cale 16dn #10D-34 ",
+        "ciudad": "Bucaramanga",
         "categoria": "qwe",
-        "contrasena": "",
+        "contrasena": "Erik123",
         "pqr": [],
         "servicios_adquiridos": [],
-        "productos_adquiridos": []
+        "productos_adquiridos": [],
+        "categoria_cliente": "nuevo"
     }
 ]

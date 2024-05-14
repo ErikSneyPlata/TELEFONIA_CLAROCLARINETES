@@ -1,0 +1,24 @@
+{
+    "servicios": [
+        {
+            "nombre del servicio": "fgdf",
+            "codigo del servicio": "gdfg",
+            "precio": "dfgdfg",
+            "especificacion": "dfgdgf"
+        }
+    ],
+    "productos": [
+        {
+            "nombre del producto": "vevew",
+            "codigo del producto": "12312",
+            "precio": "qdwvewvw",
+            "especificacion": "vewvewv"
+        },
+        {
+            "nombre del producto": "Prepago 5g",
+            "codigo del producto": "20002",
+            "precio": "1213123",
+            "especificacion": "fwe rwe refwe fwefwe"
+        }
+    ]
+}

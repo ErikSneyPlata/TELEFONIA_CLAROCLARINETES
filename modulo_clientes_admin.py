@@ -56,8 +56,7 @@ def agregar_usuario():
     print("\nusuario agregado con exito\n")
     
 def modificar_usuario():
-    cierre = True
-    while cierre:
+    while True:
         datos = leer_crear_json()
         mapeo_por_documento = input("Ingrese el documento del usuario a buscar: ")
         for usuario in datos:
@@ -71,7 +70,9 @@ def modificar_usuario():
                     usuario["contrasena"]=input("ingrese la contraseña a cambiar: ")
                     guardar_actualizar_json(datos)
                     print("\nusuario modificado con exito \n")
-                    break
+                    return
+        print("\nCLIENTE NO ENCONTRADO")
+        return
                     #cierre = False #cierra el while una vez encontrado el usuario
                               
             
@@ -95,9 +96,9 @@ def mostrar_usuarios():
             print(f"{clave}: {valor}")
         print("\n")
 
-mostrar_usuarios()
-
 #3 facturas, se hace despues de que se haga el modulo de ventas
+def facturas():
+    print("FACTURAS")
 
 #4 pqr
 def generar_pqr():
