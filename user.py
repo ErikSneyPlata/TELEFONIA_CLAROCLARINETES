@@ -1,4 +1,6 @@
-import modulo_clientes_admin as reutilizar
+import modulo_clientes_admin
+import modulo_ventas_admin
+
 """def ingreso():
     
 def perfil():

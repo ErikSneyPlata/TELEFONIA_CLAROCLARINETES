@@ -90,6 +90,7 @@ def eliminar_cliente():
 def mostrar_usuarios():
     with open("json\\datos.json","r") as lectura:
             datos = json.load(lectura)
+    interlineado()
     for usuario in datos:
         for clave,valor in usuario.items():
             print(f"{clave}: {valor}")
@@ -104,22 +105,21 @@ def facturas():
     while True:
         datos = leer_crear_json()
         mapeo_por_documento = input("Ingrese el documento del usuario a buscar: ")
-        for usuario in datos:
-            try:
+        try:
+            for usuario in datos:
                 if usuario["documento"] == mapeo_por_documento:
                     print("\nPROCEDEMOS A VERIFICAR LA CUENTA DEL CLIENTE...\n")
-                    if usuario["servicios adquiridos"]==True:
-                        for servicios in usuario["servicios adquiridos"]:
-                            precio_cliente=float(servicios["precio"])
+                    verificacion = usuario.get("servicios adquiridos")
+                    for servicios in verificacion:
+                        precio_cliente=float(servicios["precio"])
                         precio_final=precio_final+precio_cliente
-                        print(f"Nombre: {usuario["nombre"]}\nDocumento: {usuario["documento"]}\nFactura de servicios: {precio_final}")
-                    else:
-                        interlineado()
-                        return print("\nEL CLIENTE NO TIENE SERVICIOS CONTRATADOS\n")
-            except KeyError:
-                print("\nEL CLIENTE NO TIENE SERVICIOS CONTRATADOS\n")
-                    
-#facturas()
+                    interlineado()
+                    return print(f"Nombre: {usuario["nombre"]}\nDocumento: {usuario["documento"]}\nFactura de servicios: {precio_final}\n")      
+            else:
+                interlineado()
+                return print("\nEL CLIENTE NO SE ENCUENTRA EN EL SISTEMA\n")
+        except KeyError:
+            print("ERROR: INTENTE DE NUEVO, LA OPCION QUE INGRESASTE NO ES VALIDA")                
 
 #4 pqr
 def generar_pqr():
@@ -127,7 +127,7 @@ def generar_pqr():
     
     while True:
         
-            persona= input("ingrese el documento para verificar el usuario")
+            persona= input("ingrese el documento para verificar el usuario: ")
             for usuarios in datos:
                 if usuarios["documento"]==persona:
                     print(f"Señor/a {usuarios["nombre"]}\n\nVALIDAREMOS SUS DATOS A CONTINUACION:\n")
@@ -135,11 +135,13 @@ def generar_pqr():
                         print(f"{clave}: {valor}")
                         
                     print("\nBien, ahora generaremos la peticion, queja o reclamo que necesita: \n")
-                    usuarios["pqr"].append(input("ingrese la consulta a realizar: "))
-                    print(usuarios["pqr"])
+                    usuarios.setdefault("pqr", []).append(input("ingrese la consulta a realizar: "))
+                    #print(usuarios["pqr"])
+                    
                     guardar_actualizar_json(datos)
                     interlineado()  
                     return "\nCONSULTA AÑADIDA A LA BASE DE DATOS CON EXITO Y SOLUCIONADA\n"
             interlineado()  
             return "\nNo esta registrada en la base de datos o indico el documento incorrectamente\n"
+        
            

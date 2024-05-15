@@ -44,6 +44,12 @@
                 "codigo del servicio": "10001",
                 "precio": "50000",
                 "especificaciones": "Fibra + telefonia, internet de 400mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 400mgps",
+                "codigo del servicio": "10001",
+                "precio": "50000",
+                "especificaciones": "Fibra + telefonia, internet de 400mbps ilimitado"
             }
         ],
         "productos adquiridos": [
@@ -53,6 +59,10 @@
                 "precio": "1200000",
                 "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
             }
+        ],
+        "pqr": [
+            "Consulta de servicios",
+            "facturacion"
         ]
     },
     {
@@ -62,6 +72,31 @@
         "direccion": "calle 12#13-32",
         "ciudad": "Floridablanca",
         "categoria": "plata",
-        "contrasena": ""
+        "contrasena": "",
+        "productos adquiridos": [
+            {
+                "nombre del producto": "Telefono huawei 11 pro",
+                "codigo del producto": "20001",
+                "precio": "2000000",
+                "especificaciones": "telefono movil para uso diario, tiene la mejor ram del mercado y su uso perfecto"
+            }
+        ]
+    },
+    {
+        "nombre": "David Stivenson",
+        "documento": "1234567",
+        "edad": "22",
+        "direccion": "calle 36 # 32-44",
+        "ciudad": "Giron",
+        "categoria": "plata",
+        "contrasena": "",
+        "servicios adquiridos": [
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            }
+        ]
     }
 ]

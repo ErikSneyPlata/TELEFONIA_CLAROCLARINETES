@@ -50,7 +50,7 @@ def tipos_clientes():
 def areas_geograficas():
     modulo_clientes.interlineado()
     ciudades = []
-    print("areas geograficas donde mas se venden los servicios")
+    print("AREAS GEOGRAFICAS DONDE MAS SE HAN VENDIDO SERVICIOS\n\n")
     datos = modulo_clientes.leer_crear_json()
     for area in datos:
         ciudades.append(area["ciudad"])
@@ -68,7 +68,7 @@ def areas_geograficas():
         if frecuencia == max_frecuencia:
             ciudades_repetidas.append(ciudad)
         
-    print("Ciudades repetidas:\n")
+    print("Ciudad donde mas han vendido servicios:\n")
     for ciudad in ciudades_repetidas:
-        print(f"{ciudad}: {contador_ciudades[ciudad]} veces")
+        print(f"{ciudad}: {contador_ciudades[ciudad]} clientes")
        

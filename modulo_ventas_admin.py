@@ -52,6 +52,8 @@ def guardar_actualizar_json(servicios, productos):
 def mostrar_productos():
     productos = leer_crear_productos()
     servicios= leer_crear_servicios()
+    interlineado()
+    print("PRODUCTOS DISPONIBLES PARA OFERTAR:\n")
     while True:
         for especificacion in productos:
             for clave,valor in especificacion.items():
@@ -61,6 +63,8 @@ def mostrar_productos():
 #2. mostrar servicios         
 def mostrar_servicios():
     servicios = leer_crear_servicios()
+    interlineado()
+    print("SERVICIOS DISPONIBLES PARA OFERTAR:\n")
     while True:
         for especificacion in servicios:
             for clave,valor in especificacion.items():
@@ -71,7 +75,7 @@ def mostrar_servicios():
 def registro_venta():
     while True:
         interlineado()
-        print("\n1. registrar venta de servicios\n2. registrar venta de productos\n3.ver estudio del cliente automatizado\n4. regresar\n\n")
+        print("\n1. registrar venta de servicios\n2. registrar venta de productos\n3. regresar\n\n")
         try:
                 opt=int(input("Ingrese una opcion : "))
                 if opt==1:
@@ -79,8 +83,6 @@ def registro_venta():
                 elif opt==2:
                     registrando_venta_productos()
                 elif opt==3:
-                    interaccion_cliente()
-                elif opt==4:
                     return
         except:
                 print("\nla opcion que ingresaste no es valida\n")
@@ -106,9 +108,11 @@ def registrando_venta_servicios():
                         manejar_totales_ventas()
                         return print("\nSERVICIO AÑADIDO CON EXITO AL CLIENTE ", usuario["nombre"], " con identificacion ",usuario["documento"], "\n")                        
                 else:
-                    return print("SERVICIO NO ENCONTRADO")
+                    interlineado()
+                    return print("\nSERVICIO NO ENCONTRADO\n")
         else:
-            return print("NO SE ENCONTRO AL CLIENTE")
+            interlineado()
+            return print("\nNO SE ENCONTRO AL CLIENTE\n")
 
 #3.2                                           
 def registrando_venta_productos():
@@ -132,11 +136,12 @@ def registrando_venta_productos():
                         manejar_totales_ventas() 
                         return print("\nPRODUCTO AÑADIDO CON EXITO AL CLIENTE ", usuario["nombre"], " con identificacion ",usuario["documento"], "\n")                       
                 else:
-                    return print("PRODUCTO NO ENCONTRADO")
+                    interlineado()
+                    return print("\nPRODUCTO NO ENCONTRADO\n")
         else:
-            return print("NO SE ENCONTRO AL CLIENTE")
+            interlineado
+            return print("\nNO SE ENCONTRO AL CLIENTE\n")
 
-registrando_venta_productos()
 #3.3
 def interaccion_cliente():
     print("segun las compras anteriores ofrecer")
@@ -182,7 +187,7 @@ def modificar_servicio():
     interlineado()
     mostrar_servicios()
     print("LO ANTERIOR MOSTRADO SON LOS SERVICIOS REGISTRADOS\n\nCual servicio quieres modificar?\n")
-    selecion = input("ingrese el CODIGO del producto a modificar")
+    selecion = input("ingrese el CODIGO del producto a modificar: ")
     for servicio in servicios:
         if selecion == servicio["codigo del servicio"]:
             servicio["nombre del servicio"]= input("Ingreses el nuevo NOMBRE del servicio: ")
@@ -219,9 +224,10 @@ def registrar_producto():
 def modificar_productos():
     productos = leer_crear_productos()
     interlineado()
+    print("\nPRODUCTOS DISPONIBLES:\n")
     mostrar_productos()
     print("LO ANTERIOR MOSTRADO SON LOS SERVICIOS REGISTRADOS\n\nCual servicio quieres modificar?\n")
-    selecion = input("ingrese el CODIGO del producto a modificar")
+    selecion = input("ingrese el CODIGO del producto a modificar: ")
     for producto in productos:
         if selecion == producto["codigo del producto"]:
             producto["nombre del producto"]= input("Ingreses el nuevo NOMBRE del producto: ")
