@@ -100,9 +100,9 @@ def registrando_venta_servicios():
                 servicio=input("ingrese CODIGO del servicio como aparece para agregarlo: ")
                 for especificacion in servicios:
                     if servicio == especificacion["codigo del servicio"]:
-                        usuario["servicios adquiridos"].append(especificacion)
+                        usuario.setdefault("servicios adquiridos",[]).append(especificacion)
                         funciones_modulo_cliente.guardar_actualizar_json(datos)
-                        TS = TS+1 
+                        TS+=1 
                         manejar_totales_ventas()
                         return print("\nSERVICIO AÑADIDO CON EXITO AL CLIENTE ", usuario["nombre"], " con identificacion ",usuario["documento"], "\n")                        
                 else:
@@ -126,16 +126,17 @@ def registrando_venta_productos():
                 producto=input("ingrese CODIGO del servicio como aparece para agregarlo: ")
                 for especificacion in productos:
                     if producto == especificacion["codigo del producto"]:
-                        usuario["productos adquiridos"].append(especificacion)
+                        usuario.setdefault("productos adquiridos",[]).append(especificacion)
                         funciones_modulo_cliente.guardar_actualizar_json(datos)
                         TP = TP+1
                         manejar_totales_ventas() 
-                        return print("\PRODUCTO AÑADIDO CON EXITO AL CLIENTE ", usuario["nombre"], " con identificacion ",usuario["documento"], "\n")                       
+                        return print("\nPRODUCTO AÑADIDO CON EXITO AL CLIENTE ", usuario["nombre"], " con identificacion ",usuario["documento"], "\n")                       
                 else:
                     return print("PRODUCTO NO ENCONTRADO")
         else:
             return print("NO SE ENCONTRO AL CLIENTE")
 
+registrando_venta_productos()
 #3.3
 def interaccion_cliente():
     print("segun las compras anteriores ofrecer")

@@ -79,10 +79,12 @@ def eliminar_cliente():
         mapeo_por_documento = input("Ingrese el documento del usuario a eliminar: ")
         for usuario in datos:
                 if usuario["documento"] == mapeo_por_documento:
-                    datos.remove()
+                    datos.remove(usuario)
                     guardar_actualizar_json(datos)
                     return print("\nCLIENTE ELIMINADO CORRECTAMENTE")
+                
         return print("El usuario no se encontro")
+    
 
 #2 perfiles de usuarios 
 def mostrar_usuarios():
@@ -92,10 +94,32 @@ def mostrar_usuarios():
         for clave,valor in usuario.items():
             print(f"{clave}: {valor}")
         print("\n")
+    print("\n\nLo anterior mostrado son los usuarios registrados\n")
 
 #3 facturas, se hace despues de que se haga el modulo de ventas
 def facturas():
-    print("FACTURAS")
+    print("\nFACTURAS\n\n")
+    precio_final=0
+    precio_cliente=0
+    while True:
+        datos = leer_crear_json()
+        mapeo_por_documento = input("Ingrese el documento del usuario a buscar: ")
+        for usuario in datos:
+            try:
+                if usuario["documento"] == mapeo_por_documento:
+                    print("\nPROCEDEMOS A VERIFICAR LA CUENTA DEL CLIENTE...\n")
+                    if usuario["servicios adquiridos"]==True:
+                        for servicios in usuario["servicios adquiridos"]:
+                            precio_cliente=float(servicios["precio"])
+                        precio_final=precio_final+precio_cliente
+                        print(f"Nombre: {usuario["nombre"]}\nDocumento: {usuario["documento"]}\nFactura de servicios: {precio_final}")
+                    else:
+                        interlineado()
+                        return print("\nEL CLIENTE NO TIENE SERVICIOS CONTRATADOS\n")
+            except KeyError:
+                print("\nEL CLIENTE NO TIENE SERVICIOS CONTRATADOS\n")
+                    
+#facturas()
 
 #4 pqr
 def generar_pqr():
