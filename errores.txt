@@ -1,0 +1,8 @@
+15-05-2024 13:29:58: division by zero
+15-05-2024 13:31:54: division by zero
+15-05-2024 13:31:55: division by zero
+15-05-2024 13:32:06: division by zero
+15-05-2024 13:32:08: division by zero
+15-05-2024 13:36:01: invalid literal for int() with base 10: 'efe'
+15-05-2024 13:36:02: invalid literal for int() with base 10: 'fe'
+15-05-2024 13:36:02: invalid literal for int() with base 10: 'fe'

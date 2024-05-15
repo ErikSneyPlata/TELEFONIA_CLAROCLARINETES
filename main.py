@@ -9,16 +9,16 @@ import security
 while True:
     ruta_bienvenida ="ARCHIVOS\\bienvenida.txt"
     funciones_cliente.lecturaArchivos(ruta_bienvenida)
-    opt=int(input("Ingrese una opcion : "))
     try:
+        opt=int(input("Ingrese una opcion : "))
         if opt==1:
             menus_admin.menu_admin()
         elif opt==2:
             security.security_users()
         elif opt==3:
             break  
-    except:
-        print("\nla opcion que ingresaste no es valida\n")
+    except Exception as e:
+        security.manejo_errores(e)
               
 #----------------------------------------------------------------------------------
 

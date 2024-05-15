@@ -1,5 +1,7 @@
 import json
 import random
+import security
+
 def lecturaArchivos(ruta): #recibe la ruta del archivo a leer
     with open(ruta, encoding='utf-8') as mostrar:
         print(mostrar.read())
@@ -33,94 +35,107 @@ def guardar_actualizar_json(datos):
     
 #--------------------------------------------------------------------------------    
 def agregar_usuario():
-    nombre=input("ingrese el nombre: ")
-    documento=input("ingrese el documento: ")
-    edad=input("ingrese la edad: ")
-    direccion=input("Ingrese la direccion: ")
-    eleccion = input("\nEscoja la ciudad:\n1.Bucaramanga\n2.Giron\n3.Floridablanca\n4.Piedecuesta\n5.Lebrija\n\nSU ELECCION ES: ")
-    if eleccion == 1:
-        ciudad = "Bucaramanga"
-    elif eleccion == 2:
-        ciudad = "Giron"  
-    elif eleccion == 3:
-        ciudad = "Floridablanca"   
-    elif eleccion == 4:
-            ciudad = "Piedecuesta"   
-    elif eleccion == 5:
-        ciudad = "Lebrija"
-    else:
-        ciudad="Bucaramanga"
-                  
-    eleccion = random.randrange(1, 4)
-    if eleccion == 1:
-        categoria_cliente = "bronce"
-    elif eleccion == 2:
-        categoria_cliente = "plata"  
-    elif eleccion == 3:
-        categoria_cliente = "oro"   
-  
-    usuario={
-        "nombre":nombre,
-        "documento":documento,
-        "edad":edad,
-        "direccion":direccion,
-        "ciudad":ciudad,
-        "categoria": categoria_cliente,
-        "contrasena":"",      
-    }
-    datos = leer_crear_json()
-    datos.append(usuario)
-    guardar_actualizar_json(datos)
-    print("\nusuario agregado con exito\n")
+    while True:
+        try:
+            nombre=input("ingrese el nombre: ")
+            documento=input("ingrese el documento: ")
+            edad=input("ingrese la edad: ")
+            direccion=input("Ingrese la direccion: ")
+            eleccion = input("\nEscoja la ciudad:\n1.Bucaramanga\n2.Giron\n3.Floridablanca\n4.Piedecuesta\n5.Lebrija\n\nSU ELECCION ES: ")
+            if eleccion == 1:
+                ciudad = "Bucaramanga"
+            elif eleccion == 2:
+                ciudad = "Giron"  
+            elif eleccion == 3:
+                ciudad = "Floridablanca"   
+            elif eleccion == 4:
+                    ciudad = "Piedecuesta"   
+            elif eleccion == 5:
+                ciudad = "Lebrija"
+            else:
+                ciudad="Bucaramanga"
+                        
+            eleccion = random.randrange(1, 4)
+            if eleccion == 1:
+                categoria_cliente = "bronce"
+            elif eleccion == 2:
+                categoria_cliente = "plata"  
+            elif eleccion == 3:
+                categoria_cliente = "oro"   
+        
+            usuario={
+                "nombre":nombre,
+                "documento":documento,
+                "edad":edad,
+                "direccion":direccion,
+                "ciudad":ciudad,
+                "categoria": categoria_cliente,
+                "contrasena":"",      
+            }
+            datos = leer_crear_json()
+            datos.append(usuario)
+            guardar_actualizar_json(datos)
+            print("\nusuario agregado con exito\n")
+            return
+        except Exception as error:
+                print("\nla opcion que ingresaste no es valida\n")
+                security.manejo_errores(error)
     
 # agregar_usuario()  
     
 def modificar_usuario():
     while True:
-        datos = leer_crear_json()
-        mapeo_por_documento = input("Ingrese el documento del usuario a buscar: ")
-        for usuario in datos:
-                if usuario["documento"] == mapeo_por_documento:
-                    print("\nPROCEDEMOS A MODIFICAR...\n")
-                    usuario["nombre"] = input("ingrese el nombre: ")
-                    usuario["edad"]=input("ingrese la edad: ")
-                    usuario["direccion"]=input("Ingrese la direccion: ")
-                    
-                    eleccion = input("\nEscoja la ciudad:\n1.Bucaramanga\n2.Giron\n3.Floridablanca\n4.Piedecuesta\n5.Lebrija\n\nSU ELECCION ES: ")
-                    if eleccion == 1:
-                        ciudad = "Bucaramanga"
-                    elif eleccion == 2:
-                        ciudad = "Giron"  
-                    elif eleccion == 3:
-                        ciudad = "Floridablanca"   
-                    elif eleccion == 4:
-                            ciudad = "Piedecuesta"   
-                    elif eleccion == 5:
-                        ciudad = "Lebrija"
-                    else:
-                        ciudad="Bucaramanga"
-                    
-                    usuario["ciudad"]=ciudad
-                    usuario["contrasena"]=input("ingrese la contraseña a cambiar: ")
-                    guardar_actualizar_json(datos)
-                    print("\nusuario modificado con exito \n")
-                    return
-        print("\nCLIENTE NO ENCONTRADO")
-        return
-                    #cierre = False #cierra el while una vez encontrado el usuario
+        try:
+            datos = leer_crear_json()
+            mapeo_por_documento = input("Ingrese el documento del usuario a buscar: ")
+            for usuario in datos:
+                    if usuario["documento"] == mapeo_por_documento:
+                        print("\nPROCEDEMOS A MODIFICAR...\n")
+                        usuario["nombre"] = input("ingrese el nombre: ")
+                        usuario["edad"]=input("ingrese la edad: ")
+                        usuario["direccion"]=input("Ingrese la direccion: ")
+                        
+                        eleccion = input("\nEscoja la ciudad:\n1.Bucaramanga\n2.Giron\n3.Floridablanca\n4.Piedecuesta\n5.Lebrija\n\nSU ELECCION ES: ")
+                        if eleccion == 1:
+                            ciudad = "Bucaramanga"
+                        elif eleccion == 2:
+                            ciudad = "Giron"  
+                        elif eleccion == 3:
+                            ciudad = "Floridablanca"   
+                        elif eleccion == 4:
+                                ciudad = "Piedecuesta"   
+                        elif eleccion == 5:
+                            ciudad = "Lebrija"
+                        else:
+                            ciudad="Bucaramanga"
+                        
+                        usuario["ciudad"]=ciudad
+                        usuario["contrasena"]=input("ingrese la contraseña a cambiar: ")
+                        guardar_actualizar_json(datos)
+                        print("\nusuario modificado con exito \n")
+                        return
+            print("\nCLIENTE NO ENCONTRADO")
+            return
+        except Exception as error:
+            print("\nla opcion que ingresaste no es valida\n")
+            security.manejo_errores(error)
                               
             
 def eliminar_cliente():
     while True:
-        datos = leer_crear_json()
-        mapeo_por_documento = input("Ingrese el documento del usuario a eliminar: ")
-        for usuario in datos:
-                if usuario["documento"] == mapeo_por_documento:
-                    datos.remove(usuario)
-                    guardar_actualizar_json(datos)
-                    return print("\nCLIENTE ELIMINADO CORRECTAMENTE")
-                
-        return print("El usuario no se encontro")
+        try:
+            datos = leer_crear_json()
+            mapeo_por_documento = input("Ingrese el documento del usuario a eliminar: ")
+            for usuario in datos:
+                    if usuario["documento"] == mapeo_por_documento:
+                        datos.remove(usuario)
+                        guardar_actualizar_json(datos)
+                        return print("\nCLIENTE ELIMINADO CORRECTAMENTE")
+                    
+            return print("El usuario no se encontro")
+        except Exception as error:
+            print("\nla opcion que ingresaste no es valida\n")
+            security.manejo_errores(error)
     
 
 #2 perfiles de usuarios 
@@ -155,15 +170,16 @@ def facturas():
             else:
                 interlineado()
                 return print("\nEL CLIENTE NO SE ENCUENTRA EN EL SISTEMA\n")
-        except KeyError:
-            print("ERROR: INTENTE DE NUEVO, LA OPCION QUE INGRESASTE NO ES VALIDA")                
+        except Exception as error:
+            print("\nla opcion que ingresaste no es valida\n")
+            security.manejo_errores(error)              
 
 #4 pqr
 def generar_pqr():
     datos=leer_crear_json()
     
     while True:
-        
+        try:
             persona= input("ingrese el documento para verificar el usuario: ")
             for usuarios in datos:
                 if usuarios["documento"]==persona:
@@ -180,5 +196,8 @@ def generar_pqr():
                     return "\nCONSULTA AÑADIDA A LA BASE DE DATOS CON EXITO Y SOLUCIONADA\n"
             interlineado()  
             return "\nNo esta registrada en la base de datos o indico el documento incorrectamente\n"
+        except Exception as error:
+            print("\nla opcion que ingresaste no es valida\n")
+            security.manejo_errores(error)
         
            

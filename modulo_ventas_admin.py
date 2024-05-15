@@ -1,6 +1,7 @@
 import json
 import modulo_clientes_admin as funciones_modulo_cliente
 import modulo_estadisticas_admin as estadisticas
+import security
 
 TS = 0
 TP = 0
@@ -92,27 +93,31 @@ def registrando_venta_servicios():
     datos = funciones_modulo_cliente.leer_crear_json()
     servicios=leer_crear_servicios()
     while True:
-        interlineado()
-        print("\n¡ingrese el documento del cliente para hacer la busqueda!\n")
-        doc=input("Ingrese el documento: ")
-        for usuario in datos:
-            if usuario["documento"]==str(doc):
-                print("\nQue servicio vas a agregar?\n")
-                mostrar_servicios()
-                servicio=input("ingrese CODIGO del servicio como aparece para agregarlo: ")
-                for especificacion in servicios:
-                    if servicio == especificacion["codigo del servicio"]:
-                        usuario.setdefault("servicios adquiridos",[]).append(especificacion)
-                        funciones_modulo_cliente.guardar_actualizar_json(datos)
-                        TS+=1 
-                        manejar_totales_ventas()
-                        return print("\nSERVICIO AÑADIDO CON EXITO AL CLIENTE ", usuario["nombre"], " con identificacion ",usuario["documento"], "\n")                        
-                else:
-                    interlineado()
-                    return print("\nSERVICIO NO ENCONTRADO\n")
-        else:
+        try:
             interlineado()
-            return print("\nNO SE ENCONTRO AL CLIENTE\n")
+            print("\n¡ingrese el documento del cliente para hacer la busqueda!\n")
+            doc=input("Ingrese el documento: ")
+            for usuario in datos:
+                if usuario["documento"]==str(doc):
+                    print("\nQue servicio vas a agregar?\n")
+                    mostrar_servicios()
+                    servicio=input("ingrese CODIGO del servicio como aparece para agregarlo: ")
+                    for especificacion in servicios:
+                        if servicio == especificacion["codigo del servicio"]:
+                            usuario.setdefault("servicios adquiridos",[]).append(especificacion)
+                            funciones_modulo_cliente.guardar_actualizar_json(datos)
+                            TS+=1 
+                            manejar_totales_ventas()
+                            return print("\nSERVICIO AÑADIDO CON EXITO AL CLIENTE ", usuario["nombre"], " con identificacion ",usuario["documento"], "\n")                        
+                    else:
+                        interlineado()
+                        return print("\nSERVICIO NO ENCONTRADO\n")
+            else:
+                interlineado()
+                return print("\nNO SE ENCONTRO AL CLIENTE\n")
+        except Exception as error:
+            print("\nla opcion que ingresaste no es valida\n")
+            security.manejo_errores(error)
 
 #3.2                                           
 def registrando_venta_productos():
@@ -120,27 +125,31 @@ def registrando_venta_productos():
     datos = funciones_modulo_cliente.leer_crear_json()
     productos=leer_crear_productos()
     while True:
-        interlineado()
-        print("\n¡ingrese el documento del cliente para hacer la busqueda!\n")
-        doc=input("Ingrese el documento: ")
-        for usuario in datos:
-            if usuario["documento"]==str(doc):
-                print("\nQue producto vas a agregar?\n")
-                mostrar_productos()
-                producto=input("ingrese CODIGO del servicio como aparece para agregarlo: ")
-                for especificacion in productos:
-                    if producto == especificacion["codigo del producto"]:
-                        usuario.setdefault("productos adquiridos",[]).append(especificacion)
-                        funciones_modulo_cliente.guardar_actualizar_json(datos)
-                        TP = TP+1
-                        manejar_totales_ventas() 
-                        return print("\nPRODUCTO AÑADIDO CON EXITO AL CLIENTE ", usuario["nombre"], " con identificacion ",usuario["documento"], "\n")                       
-                else:
-                    interlineado()
-                    return print("\nPRODUCTO NO ENCONTRADO\n")
-        else:
-            interlineado
-            return print("\nNO SE ENCONTRO AL CLIENTE\n")
+        try:
+            interlineado()
+            print("\n¡ingrese el documento del cliente para hacer la busqueda!\n")
+            doc=input("Ingrese el documento: ")
+            for usuario in datos:
+                if usuario["documento"]==str(doc):
+                    print("\nQue producto vas a agregar?\n")
+                    mostrar_productos()
+                    producto=input("ingrese CODIGO del servicio como aparece para agregarlo: ")
+                    for especificacion in productos:
+                        if producto == especificacion["codigo del producto"]:
+                            usuario.setdefault("productos adquiridos",[]).append(especificacion)
+                            funciones_modulo_cliente.guardar_actualizar_json(datos)
+                            TP = TP+1
+                            manejar_totales_ventas() 
+                            return print("\nPRODUCTO AÑADIDO CON EXITO AL CLIENTE ", usuario["nombre"], " con identificacion ",usuario["documento"], "\n")                       
+                    else:
+                        interlineado()
+                        return print("\nPRODUCTO NO ENCONTRADO\n")
+            else:
+                interlineado
+                return print("\nNO SE ENCONTRO AL CLIENTE\n")
+        except Exception as error:
+            print("\nla opcion que ingresaste no es valida\n")
+            security.manejo_errores(error)
 
 #3.3
 def interaccion_cliente():
@@ -162,87 +171,110 @@ def menu_modficacion_registro_PS():
                     modificar_servicio()
                 elif opt==5:
                     return
-        except:
-                print("\nla opcion que ingresaste no es valida\n")
+        except Exception as error:
+            print("\nla opcion que ingresaste no es valida\n")
+            security.manejo_errores(error)
     
 def registrar_servicio():
-    nombre_servicio = input("Ingrese el nombre del servicio: ")
-    codigo_servicio = input("Ingrese el codigo del servicio: ")
-    precio = input("Ingrese la precio: $")
-    especificacion = input("Ingrese la especificacion del servicio: ")
-    servicio = {
-        "nombre del servicio": nombre_servicio,
-        "codigo del servicio": codigo_servicio,
-        "precio": precio,
-        "especificaciones": especificacion   
-    }
-    servicios = leer_crear_servicios()
-    productos = leer_crear_productos()
-    servicios.append(servicio)
-    guardar_actualizar_json(servicios, productos)
-    print("\nServicio agregado con éxito\n")
+    while True:
+        try:
+            nombre_servicio = input("Ingrese el nombre del servicio: ")
+            codigo_servicio = input("Ingrese el codigo del servicio: ")
+            precio = input("Ingrese la precio: $")
+            especificacion = input("Ingrese la especificacion del servicio: ")
+            servicio = {
+                "nombre del servicio": nombre_servicio,
+                "codigo del servicio": codigo_servicio,
+                "precio": precio,
+                "especificaciones": especificacion   
+            }
+            servicios = leer_crear_servicios()
+            productos = leer_crear_productos()
+            servicios.append(servicio)
+            guardar_actualizar_json(servicios, productos)
+            return print("\nServicio agregado con éxito\n")
+        except Exception as error:
+            print("\nla opcion que ingresaste no es valida\n")
+            security.manejo_errores(error)
+    
     
 def modificar_servicio():
-    servicios = leer_crear_servicios()
-    interlineado()
-    mostrar_servicios()
-    print("LO ANTERIOR MOSTRADO SON LOS SERVICIOS REGISTRADOS\n\nCual servicio quieres modificar?\n")
-    selecion = input("ingrese el CODIGO del producto a modificar: ")
-    for servicio in servicios:
-        if selecion == servicio["codigo del servicio"]:
-            servicio["nombre del servicio"]= input("Ingreses el nuevo NOMBRE del servicio: ")
-            servicio["precio"]= input("Ingrese el nuevo PRECIO del servicio: ")
-            servicio["especificaciones"]= input("Ingrese las nuevas ESPECIFICACIONES del servcio: ")
+    while True:
+        try:
+            servicios = leer_crear_servicios()
             interlineado()
-            print("\nGUARDANDO...\n\n\Servicio modificado correctamente\n")
-            print("\n el servicio modificado quedo asi:\n")
-            for clave,valor in servicio.items():
-                print(f"{clave}: {valor}")
-            return
-        else:
-            interlineado()
-            print("\nNO SE ENCONTRO EL SERVICIO\n")
-            return
+            mostrar_servicios()
+            print("LO ANTERIOR MOSTRADO SON LOS SERVICIOS REGISTRADOS\n\nCual servicio quieres modificar?\n")
+            selecion = input("ingrese el CODIGO del producto a modificar: ")
+            for servicio in servicios:
+                if selecion == servicio["codigo del servicio"]:
+                    servicio["nombre del servicio"]= input("Ingreses el nuevo NOMBRE del servicio: ")
+                    servicio["precio"]= input("Ingrese el nuevo PRECIO del servicio: ")
+                    servicio["especificaciones"]= input("Ingrese las nuevas ESPECIFICACIONES del servcio: ")
+                    interlineado()
+                    print("\nGUARDANDO...\n\n\Servicio modificado correctamente\n")
+                    print("\n el servicio modificado quedo asi:\n")
+                    for clave,valor in servicio.items():
+                        print(f"{clave}: {valor}")
+                    return
+                else:
+                    interlineado()
+                    print("\nNO SE ENCONTRO EL SERVICIO\n")
+                    return
+        except Exception as error:
+            print("\nla opcion que ingresaste no es valida\n")
+            security.manejo_errores(error)
 
 def registrar_producto():
-    nombre_producto = input("Ingrese el nombre del producto: ")
-    codigo_producto = input("Ingrese el codigo del producto: ")
-    precio = input("Ingrese la precio: $")
-    especificacion = input("Ingrese la especificacion del producto: ")
-    producto = {
-        "nombre del producto": nombre_producto,
-        "codigo del producto": codigo_producto,
-        "precio": precio,
-        "especificaciones": especificacion   
-    }
-    servicios = leer_crear_servicios()
-    productos = leer_crear_productos()
-    productos.append(producto)
-    guardar_actualizar_json(servicios, productos)
-    print("\nProducto agregado con éxito\n")
+    while True:
+        try:
+            nombre_producto = input("Ingrese el nombre del producto: ")
+            codigo_producto = input("Ingrese el codigo del producto: ")
+            precio = input("Ingrese la precio: $")
+            especificacion = input("Ingrese la especificacion del producto: ")
+            producto = {
+                "nombre del producto": nombre_producto,
+                "codigo del producto": codigo_producto,
+                "precio": precio,
+                "especificaciones": especificacion   
+            }
+            servicios = leer_crear_servicios()
+            productos = leer_crear_productos()
+            productos.append(producto)
+            guardar_actualizar_json(servicios, productos)
+            print("\nProducto agregado con éxito\n")
+        except Exception as error:
+            print("\nla opcion que ingresaste no es valida\n")
+            security.manejo_errores(error)
        
 def modificar_productos():
-    productos = leer_crear_productos()
-    interlineado()
-    print("\nPRODUCTOS DISPONIBLES:\n")
-    mostrar_productos()
-    print("LO ANTERIOR MOSTRADO SON LOS SERVICIOS REGISTRADOS\n\nCual servicio quieres modificar?\n")
-    selecion = input("ingrese el CODIGO del producto a modificar: ")
-    for producto in productos:
-        if selecion == producto["codigo del producto"]:
-            producto["nombre del producto"]= input("Ingreses el nuevo NOMBRE del producto: ")
-            producto["precio"]= input("Ingrese el nuevo PRECIO del producto: ")
-            producto["especificaciones"]= input("Ingrese las nuevas ESPECIFICACIONES del producto: ")
+    while True:
+        try:
+            productos = leer_crear_productos()
             interlineado()
-            print("\nGUARDANDO...\n\n\nProducto modificado correctamente\n")
-            print("\n el producto modificado quedo asi:\n")
-            for clave,valor in producto.items():
-                print(f"{clave}: {valor}")
-            return
-        else:
-            interlineado()
-            print("\nNO SE ENCONTRO EL PRODUCTO\n")
-            return
+            print("\nPRODUCTOS DISPONIBLES:\n")
+            mostrar_productos()
+            print("LO ANTERIOR MOSTRADO SON LOS SERVICIOS REGISTRADOS\n\nCual servicio quieres modificar?\n")
+            selecion = input("ingrese el CODIGO del producto a modificar: ")
+            for producto in productos:
+                if selecion == producto["codigo del producto"]:
+                    producto["nombre del producto"]= input("Ingreses el nuevo NOMBRE del producto: ")
+                    producto["precio"]= input("Ingrese el nuevo PRECIO del producto: ")
+                    producto["especificaciones"]= input("Ingrese las nuevas ESPECIFICACIONES del producto: ")
+                    interlineado()
+                    print("\nGUARDANDO...\n\n\nProducto modificado correctamente\n")
+                    print("\n el producto modificado quedo asi:\n")
+                    for clave,valor in producto.items():
+                        print(f"{clave}: {valor}")
+                    return
+                else:
+                    interlineado()
+                    print("\nNO SE ENCONTRO EL PRODUCTO\n")
+                    return
+        except Exception as error:
+            print("\nla opcion que ingresaste no es valida\n")
+            security.manejo_errores(error)
+            
 
                 
             

@@ -1,6 +1,7 @@
 import modulo_clientes_admin as reutilizar
 import modulo_ventas_admin as reutilizar_ventas
 import modulo_estadisticas_admin as reutilizar_estadisticas
+import security
 
 
 #----------------------------------------------------------------------------------
@@ -21,7 +22,8 @@ def menu_admin():
                 return
         except Exception as error:
             print("\nla opcion que ingresaste no es valida\n")
-            print("Error: ",error)
+            security.manejo_errores(error)
+
             
  
  
@@ -42,8 +44,10 @@ def menuAdminVentas():
                 reutilizar_ventas.menu_modficacion_registro_PS()
             elif opt==5:
                 return 
-        except:
+        except Exception as error:
             print("\nla opcion que ingresaste no es valida\n")
+            security.manejo_errores(error)
+            
 
 
 #cliente
@@ -63,8 +67,9 @@ def menuAdminClientes():
                 reutilizar.generar_pqr()  
             elif opt==5:
                 return 
-        except:
+        except Exception as error:
             print("\nla opcion que ingresaste no es valida\n")
+            security.manejo_errores(error)
 
 #1 menu de gestion de usuario
 def gestion_usuario():
@@ -84,8 +89,9 @@ def gestion_usuario():
                 reutilizar.eliminar_cliente()
             elif opt==4: 
                 return
-        except:
+        except Exception as error:
             print("\nla opcion que ingresaste no es valida\n")
+            security.manejo_errores(error)
  
 
 #estadisticas menu estadisticas
@@ -105,8 +111,9 @@ def estadistica():
                 reutilizar_estadisticas.areas_geograficas()  
             elif opt==5:
                 return  
-        except:
+        except Exception as error:
             print("\nla opcion que ingresaste no es valida\n")
+            security.manejo_errores(error)
 
     
 

@@ -64,8 +64,6 @@ def consultas(doc):
                     print("Consulta: ",valor)
         return
 
-consultas(1005163109)
-
 def cambiar_pass(doc):
     identificacion = doc
     while True:
