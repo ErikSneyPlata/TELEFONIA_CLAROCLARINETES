@@ -4,18 +4,42 @@
         "documento": "weqw",
         "edad": "wqeqw",
         "direccion": "qweqwe",
-        "ciudad": "wqeqw",
+        "ciudad": "bogota",
         "categoria": "wqeqw",
         "contrasena": "",
         "pqr": [],
-        "servicios_adquiridos": [],
-        "productos_adquiridos": [],
-        "productos adquirido": [
+        "productos adquiridos": [
             {
                 "nombre del servicio": "fgdf",
                 "codigo del servicio": "gdfg",
                 "precio": "dfgdfg",
                 "especificacion": "dfgdgf"
+            },
+            {
+                "nombre del producto": "Telefono huawei 11 pro",
+                "codigo del producto": "20001",
+                "precio": "2000000",
+                "especificaciones": "telefono movil para uso diario, tiene la mejor ram del mercado y su uso perfecto"
+            }
+        ],
+        "servicios adquiridos": [
+            {
+                "nombre del servicio": "Fibra 400mgps",
+                "codigo del servicio": "10001",
+                "precio": "50000",
+                "especificaciones": "Fibra + telefonia, internet de 400mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 400mgps",
+                "codigo del servicio": "10001",
+                "precio": "50000",
+                "especificaciones": "Fibra + telefonia, internet de 400mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 400mgps",
+                "codigo del servicio": "10001",
+                "precio": "50000",
+                "especificaciones": "Fibra + telefonia, internet de 400mbps ilimitado"
             }
         ]
     },
@@ -24,20 +48,19 @@
         "documento": "232131",
         "edad": "",
         "direccion": "",
-        "ciudad": "",
+        "ciudad": "Bucaramanga",
         "categoria": "effe",
         "contrasena": "",
         "pqr": [],
-        "servicios_adquiridos": [],
-        "productos_adquiridos": [],
-        "categoria_cliente": ""
+        "servicios adquiridos": [],
+        "productos adquiridos": []
     },
     {
         "nombre": "grgegr",
         "documento": "32434",
         "edad": "32",
         "direccion": "erg 332",
-        "ciudad": "eeve",
+        "ciudad": "Bucaramanga",
         "categoria": "eeve",
         "contrasena": "",
         "pqr": [
@@ -48,8 +71,8 @@
             "consulta factura",
             "consulta"
         ],
-        "servicios_adquiridos": [],
-        "productos_adquiridos": []
+        "servicios adquiridos": [],
+        "productos adquiridos": []
     },
     {
         "nombre": "Erik",
@@ -57,11 +80,306 @@
         "edad": "23",
         "direccion": "cale 16dn #10D-34 ",
         "ciudad": "Bucaramanga",
-        "categoria": "qwe",
+        "categoria": "nuevo",
         "contrasena": "Erik123",
         "pqr": [],
-        "servicios_adquiridos": [],
-        "productos_adquiridos": [],
-        "categoria_cliente": "nuevo"
+        "servicios adquiridos": [
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 400mgps",
+                "codigo del servicio": "10001",
+                "precio": "50000",
+                "especificaciones": "Fibra + telefonia, internet de 400mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 400mgps",
+                "codigo del servicio": "10001",
+                "precio": "50000",
+                "especificaciones": "Fibra + telefonia, internet de 400mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 400mgps",
+                "codigo del servicio": "10001",
+                "precio": "50000",
+                "especificaciones": "Fibra + telefonia, internet de 400mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 400mgps",
+                "codigo del servicio": "10001",
+                "precio": "50000",
+                "especificaciones": "Fibra + telefonia, internet de 400mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            },
+            {
+                "nombre del servicio": "Fibra 300mgps",
+                "codigo del servicio": "10002",
+                "precio": "40000",
+                "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
+            }
+        ],
+        "productos adquiridos": [
+            {
+                "nombre del producto": "Celular honor XR",
+                "codigo del producto": "20002",
+                "precio": "1200000",
+                "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
+            },
+            {
+                "nombre del producto": "Celular honor XR",
+                "codigo del producto": "20002",
+                "precio": "1200000",
+                "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
+            },
+            {
+                "nombre del producto": "Celular honor XR",
+                "codigo del producto": "20002",
+                "precio": "1200000",
+                "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
+            },
+            {
+                "nombre del producto": "Celular honor XR",
+                "codigo del producto": "20002",
+                "precio": "1200000",
+                "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
+            },
+            {
+                "nombre del producto": "Celular honor XR",
+                "codigo del producto": "20002",
+                "precio": "1200000",
+                "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
+            },
+            {
+                "nombre del producto": "Celular honor XR",
+                "codigo del producto": "20002",
+                "precio": "1200000",
+                "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
+            },
+            {
+                "nombre del producto": "Telefono huawei 11 pro",
+                "codigo del producto": "20001",
+                "precio": "2000000",
+                "especificaciones": "telefono movil para uso diario, tiene la mejor ram del mercado y su uso perfecto"
+            },
+            {
+                "nombre del producto": "Telefono huawei 11 pro",
+                "codigo del producto": "20001",
+                "precio": "2000000",
+                "especificaciones": "telefono movil para uso diario, tiene la mejor ram del mercado y su uso perfecto"
+            },
+            {
+                "nombre del producto": "Telefono huawei 11 pro",
+                "codigo del producto": "20001",
+                "precio": "2000000",
+                "especificaciones": "telefono movil para uso diario, tiene la mejor ram del mercado y su uso perfecto"
+            },
+            {
+                "nombre del producto": "Telefono huawei 11 pro",
+                "codigo del producto": "20001",
+                "precio": "2000000",
+                "especificaciones": "telefono movil para uso diario, tiene la mejor ram del mercado y su uso perfecto"
+            },
+            {
+                "nombre del producto": "Celular honor XR",
+                "codigo del producto": "20002",
+                "precio": "1200000",
+                "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
+            },
+            {
+                "nombre del producto": "Celular honor XR",
+                "codigo del producto": "20002",
+                "precio": "1200000",
+                "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
+            },
+            {
+                "nombre del producto": "Celular honor XR",
+                "codigo del producto": "20002",
+                "precio": "1200000",
+                "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
+            },
+            {
+                "nombre del producto": "Celular honor XR",
+                "codigo del producto": "20002",
+                "precio": "1200000",
+                "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
+            },
+            {
+                "nombre del producto": "Celular honor XR",
+                "codigo del producto": "20002",
+                "precio": "1200000",
+                "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
+            },
+            {
+                "nombre del producto": "Celular honor XR",
+                "codigo del producto": "20002",
+                "precio": "1200000",
+                "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
+            },
+            {
+                "nombre del producto": "Celular honor XR",
+                "codigo del producto": "20002",
+                "precio": "1200000",
+                "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
+            },
+            {
+                "nombre del producto": "Telefono huawei 11 pro",
+                "codigo del producto": "20001",
+                "precio": "2000000",
+                "especificaciones": "telefono movil para uso diario, tiene la mejor ram del mercado y su uso perfecto"
+            },
+            {
+                "nombre del producto": "Celular honor XR",
+                "codigo del producto": "20002",
+                "precio": "1200000",
+                "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
+            },
+            {
+                "nombre del producto": "Celular honor XR",
+                "codigo del producto": "20002",
+                "precio": "1200000",
+                "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
+            },
+            {
+                "nombre del producto": "Celular honor XR",
+                "codigo del producto": "20002",
+                "precio": "1200000",
+                "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
+            },
+            {
+                "nombre del producto": "Telefono huawei 11 pro",
+                "codigo del producto": "20001",
+                "precio": "2000000",
+                "especificaciones": "telefono movil para uso diario, tiene la mejor ram del mercado y su uso perfecto"
+            }
+        ]
     }
 ]

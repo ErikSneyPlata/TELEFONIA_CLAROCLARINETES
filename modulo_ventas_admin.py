@@ -1,6 +1,16 @@
 import json
 import modulo_clientes_admin as funciones_modulo_cliente
+import modulo_estadisticas_admin as estadisticas
 
+TS = 0
+TP = 0
+
+#estadistica conteo de ventas
+def manejar_totales_ventas():
+    interlineado()
+    print("\n\nVentas totales de servicios:", TS)
+    print("Ventas totales de productos:", TP,"\n")
+#--------------------------------------------------------------------------
 def lecturaArchivos(ruta): #recibe la ruta del archivo a leer
     with open(ruta, encoding='utf-8') as mostrar:
         print(mostrar.read())
@@ -61,7 +71,7 @@ def mostrar_servicios():
 def registro_venta():
     while True:
         interlineado()
-        print("\n\n1. registrar venta de servicios\n2. registrar venta de productos\n3.ver estudio del cliente automatizado\n4. regresar")
+        print("\n1. registrar venta de servicios\n2. registrar venta de productos\n3.ver estudio del cliente automatizado\n4. regresar\n\n")
         try:
                 opt=int(input("Ingrese una opcion : "))
                 if opt==1:
@@ -76,6 +86,7 @@ def registro_venta():
                 print("\nla opcion que ingresaste no es valida\n")
 #3.1
 def registrando_venta_servicios():
+    global TS
     datos = funciones_modulo_cliente.leer_crear_json()
     servicios=leer_crear_servicios()
     while True:
@@ -83,40 +94,48 @@ def registrando_venta_servicios():
         print("\n¡ingrese el documento del cliente para hacer la busqueda!\n")
         doc=input("Ingrese el documento: ")
         for usuario in datos:
-            if usuario["documento"]==doc:
-                print("\nQue producto vas a agregar?\n")
+            if usuario["documento"]==str(doc):
+                print("\nQue servicio vas a agregar?\n")
                 mostrar_servicios()
-                nombre_producto=input("ingrese nombre del servicio como aparece para agregarlo: ")
+                servicio=input("ingrese CODIGO del servicio como aparece para agregarlo: ")
                 for especificacion in servicios:
-                    if nombre_producto == especificacion["nombre del servicio"]:
-                        usuario["servicios adquiridos"]=[especificacion]
+                    if servicio == especificacion["codigo del servicio"]:
+                        usuario["servicios adquiridos"].append(especificacion)
                         funciones_modulo_cliente.guardar_actualizar_json(datos)
-                        print("\nPRODUCTO AÑADIDO CON EXITO AL CLIENTE ", usuario["nombre"], " con identificacion ",usuario["documento"], "\n")
-                    else:
-                        return print("NO SE ENCONTRO EL SERVICIO")
-            else:
-                return print("NO SE ENCONTRO AL CLIENTE")
+                        TS = TS+1 
+                        manejar_totales_ventas()
+                        return print("\nSERVICIO AÑADIDO CON EXITO AL CLIENTE ", usuario["nombre"], " con identificacion ",usuario["documento"], "\n")                        
+                else:
+                    return print("SERVICIO NO ENCONTRADO")
+        else:
+            return print("NO SE ENCONTRO AL CLIENTE")
+
 #3.2                                           
 def registrando_venta_productos():
+    global TP
     datos = funciones_modulo_cliente.leer_crear_json()
-    productos=leer_crear_servicios()
+    productos=leer_crear_productos()
     while True:
         interlineado()
         print("\n¡ingrese el documento del cliente para hacer la busqueda!\n")
         doc=input("Ingrese el documento: ")
         for usuario in datos:
-            if usuario["documento"]==doc:
-                print("\nQue servicio vas a agregar?\n")
+            if usuario["documento"]==str(doc):
+                print("\nQue producto vas a agregar?\n")
                 mostrar_productos()
-                nombre_producto=input("ingrese nombre del producto como aparece para agregarlo")
+                producto=input("ingrese CODIGO del servicio como aparece para agregarlo: ")
                 for especificacion in productos:
-                    if nombre_producto == especificacion["nombre del servicio"]:
-                        usuario["productos adquirido"]=[especificacion]
+                    if producto == especificacion["codigo del producto"]:
+                        usuario["productos adquiridos"].append(especificacion)
                         funciones_modulo_cliente.guardar_actualizar_json(datos)
-                    else:
-                        return print("NO SE ENCONTRO EL producto")
-            else:
-                return print("NO SE ENCONTRO AL CLIENTE")
+                        TP = TP+1
+                        manejar_totales_ventas() 
+                        return print("\PRODUCTO AÑADIDO CON EXITO AL CLIENTE ", usuario["nombre"], " con identificacion ",usuario["documento"], "\n")                       
+                else:
+                    return print("PRODUCTO NO ENCONTRADO")
+        else:
+            return print("NO SE ENCONTRO AL CLIENTE")
+
 #3.3
 def interaccion_cliente():
     print("segun las compras anteriores ofrecer")

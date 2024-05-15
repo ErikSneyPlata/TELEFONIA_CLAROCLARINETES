@@ -1,52 +1,74 @@
+import json
 import modulo_clientes_admin as modulo_clientes 
 import modulo_ventas_admin as modulo_ventas
 
-"""
+
 def preferencias_clientes():
-    while True:
-        datos = modulo_clientes.leer_crear_json()
-        print("\nSE VA A ANALIZAR LAS PREFERENCIAS DE COMPRAS DE LOS CLIENTES")
-        for usuario in datos:
-            usuario.get("productos adquiridos")
-            if valor == True:
-                        for i in valor:
-                            if 
+    datos_ventas = modulo_clientes.leer_crear_json()
+    ventas_servicios = {}
+    ventas_productos = {}
+
+    for usuario in datos_ventas:
+            for servicio in usuario.get("servicios adquiridos", []) + usuario.get("servicios_adquiridos", []):
+                nombre_servicio = servicio["nombre del servicio"]
+                ventas_servicios[nombre_servicio] = ventas_servicios.get(nombre_servicio, 0) + 1
+                
+            for producto in usuario.get("productos adquiridos", []) + usuario.get("productos_adquiridos", []):
+                nombre_producto = producto.get("nombre del producto", producto.get("nombre del servicio"))
+                ventas_productos[nombre_producto] = ventas_productos.get(nombre_producto, 0) + 1
+
+    servicio_mas_vendido = max(ventas_servicios, key=ventas_servicios.get)
+    producto_mas_vendido = max(ventas_productos, key=ventas_productos.get)
+    modulo_clientes.interlineado()
+    print("El servicio más vendido es: ", servicio_mas_vendido)
+    print("El producto más vendido es: ", producto_mas_vendido,"\n\n")
+    return
                     
-            
-                #if valor["codigo del servicio"] == True:
-            print("\n")
-        return
-                    
-preferencias_clientes()                  
-      """
+              
 #2   
 def tipos_clientes():
-    print("mirar los tipos de clientes y hacer una estadistica")
+    cont_bronce,cont_plata,cont_oro=0,0,0
     
-#3   menu -> estadisticas -> estadisticas de ventas:
-def ventas_est():
-    print("--------------------------------------------------------\n                   ANALISIS DE VENTAS HECHAS\n")
-    print("                   1. Ventas de servicios")
-    print("                   2. Ventas de productos")
-    print("                   3.regresar\n")
-    while True: 
-        try:
-            opt=int(input("Ingrese una opcion : "))
-            if opt==1:
-                analisis_Vservicios()
-            elif opt==2:
-                analisis_Vproductos()
-            elif opt==3:
-                return
-        except:
-            print("\nla opcion que ingresaste no es valida\n")
-    #3.1.           
-def analisis_Vservicios():
-    print("analisis de ventas de SERVICIOS hechas")
-    #3.2.
-def analisis_Vproductos():
-    print("analisis de ventas de PRODUCTOS hechas")
+    datos = modulo_clientes.leer_crear_json()
+    for tipo in datos:
+        if tipo["categoria"] == "bronce":
+            cont_bronce +=1
+        elif tipo["categoria"] == "plata":
+            cont_plata +=1
+        elif tipo["categoria"] == "oro":
+            cont_oro +=1
+    conteo = (cont_bronce,cont_plata,cont_oro)
+    # cont_bronce,cont_plata,cont_oro = sorted(conteo, reverse=True)
+    # print(cont_bronce,cont_plata,cont_oro)
+    modulo_clientes.interlineado()
+    print(f"BRONCE: {cont_bronce}\nPLATA: {cont_plata}\nORO: {cont_oro}\n\n")
+            
+            
+        
 
 #4
 def areas_geograficas():
+    modulo_clientes.interlineado()
+    ciudades = []
     print("areas geograficas donde mas se venden los servicios")
+    datos = modulo_clientes.leer_crear_json()
+    for area in datos:
+        ciudades.append(area["ciudad"])
+        
+    contador_ciudades = {}
+    for ciudad in ciudades:
+        if ciudad in contador_ciudades:
+            contador_ciudades[ciudad] += 1
+        else:
+            contador_ciudades[ciudad] = 1
+            
+    max_frecuencia = max(contador_ciudades.values())
+    ciudades_repetidas=[]
+    for ciudad,frecuencia in contador_ciudades.items():
+        if frecuencia == max_frecuencia:
+            ciudades_repetidas.append(ciudad)
+        
+    print("Ciudades repetidas:\n")
+    for ciudad in ciudades_repetidas:
+        print(f"{ciudad}: {contador_ciudades[ciudad]} veces")
+       

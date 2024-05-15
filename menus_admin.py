@@ -2,6 +2,7 @@ import modulo_clientes_admin as reutilizar
 import modulo_ventas_admin as reutilizar_ventas
 import modulo_estadisticas_admin as reutilizar_estadisticas
 
+
 #----------------------------------------------------------------------------------
 #FUNCIONES DE MENUS PARA ADMIN
 def menu_admin():
@@ -99,7 +100,7 @@ def estadistica():
             elif opt==2:
                 reutilizar_estadisticas.tipos_clientes()
             elif opt==3:
-                reutilizar_estadisticas.ventas_est()
+                reutilizar_ventas.manejar_totales_ventas()
             elif opt==4:
                 reutilizar_estadisticas.areas_geograficas()  
             elif opt==5:

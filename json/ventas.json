@@ -1,24 +1,31 @@
 {
     "servicios": [
         {
-            "nombre del servicio": "fgdf",
-            "codigo del servicio": "gdfg",
-            "precio": "dfgdfg",
-            "especificacion": "dfgdgf"
+            "nombre del servicio": "Fibra 400mgps",
+            "codigo del servicio": "10001",
+            "precio": "50000",
+            "especificaciones": "Fibra + telefonia, internet de 400mbps ilimitado"
+        },
+        {
+            "nombre del servicio": "Fibra 300mgps",
+            "codigo del servicio": "10002",
+            "precio": "40000",
+            "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
         }
     ],
     "productos": [
         {
-            "nombre del producto": "vevew",
-            "codigo del producto": "12312",
-            "precio": "qdwvewvw",
-            "especificacion": "vewvewv"
+            "nombre del producto": "Telefono huawei 11 pro",
+            "codigo del producto": "20001",
+            "precio": "2000000",
+            "especificaciones": "telefono movil para uso diario, tiene la mejor ram del mercado y su uso perfecto"
         },
         {
-            "nombre del producto": "Prepago 5g",
+            "nombre del producto": "Celular honor XR",
             "codigo del producto": "20002",
-            "precio": "1213123",
-            "especificacion": "fwe rwe refwe fwefwe"
+            "precio": "1200000",
+            "especificaciones": "telefono movil para uso diario, excelente funcionamiento"
         }
     ]
 }
+

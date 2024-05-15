@@ -44,11 +44,8 @@ def agregar_usuario():
         "edad":edad,
         "direccion":direccion,
         "ciudad":ciudad,
-        "categoria": ciudad,
-        "contrasena":"",
-        "pqr":[],
-        "servicios_adquiridos":[],
-        "productos_adquiridos":[]        
+        "categoria": categoria_cliente,
+        "contrasena":"",      
     }
     datos = leer_crear_json()
     datos.append(usuario)
@@ -66,7 +63,7 @@ def modificar_usuario():
                     usuario["edad"]=input("ingrese la edad: ")
                     usuario["direccion"]=input("Ingrese la direccion: ")
                     usuario["ciudad"]=input("ingrese la ciudad: ")
-                    usuario["categoria_cliente"]=input("ingrese la categoria: ")
+                    usuario["categoria"]=input("ingrese la categoria: ")
                     usuario["contrasena"]=input("ingrese la contraseña a cambiar: ")
                     guardar_actualizar_json(datos)
                     print("\nusuario modificado con exito \n")
