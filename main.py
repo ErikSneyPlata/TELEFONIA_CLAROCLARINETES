@@ -2,6 +2,7 @@ import json
 import user
 import menus_admin
 import modulo_clientes_admin as funciones_cliente
+import security
 
 #menu principal-------------------------------------------------------------------
 
@@ -13,7 +14,7 @@ while True:
         if opt==1:
             menus_admin.menu_admin()
         elif opt==2:
-            user.menuUser()
+            security.security_users()
         elif opt==3:
             break  
     except:

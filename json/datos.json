@@ -37,7 +37,7 @@
         "direccion": "calle 16dn#10d_34",
         "ciudad": "bucaramanga",
         "categoria": "oro",
-        "contrasena": "Erik123",
+        "contrasena": "Erik1234",
         "servicios adquiridos": [
             {
                 "nombre del servicio": "Fibra 400mgps",
@@ -98,5 +98,14 @@
                 "especificaciones": "Fibra + telefonia, internet de 300mbps ilimitado"
             }
         ]
+    },
+    {
+        "nombre": "ewqwe",
+        "documento": "23123",
+        "edad": "21",
+        "direccion": "fq e qwe we qwe",
+        "ciudad": "Bucaramanga",
+        "categoria": "& C:/Users/Erikp/AppData/Local/Programs/Python/Python312/python.exe \"c:/Users/Erikp/OneDrive/Escritorio/GIT CAMPUS/Proyecto python/main.py\"",
+        "contrasena": ""
     }
 ]

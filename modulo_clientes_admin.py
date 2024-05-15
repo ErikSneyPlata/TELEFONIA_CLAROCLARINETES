@@ -1,4 +1,5 @@
 import json
+import random
 def lecturaArchivos(ruta): #recibe la ruta del archivo a leer
     with open(ruta, encoding='utf-8') as mostrar:
         print(mostrar.read())
@@ -36,8 +37,28 @@ def agregar_usuario():
     documento=input("ingrese el documento: ")
     edad=input("ingrese la edad: ")
     direccion=input("Ingrese la direccion: ")
-    ciudad=input("ingrese la ciudad: ")
-    categoria_cliente=input("ingrese la categoria: ")
+    eleccion = input("\nEscoja la ciudad:\n1.Bucaramanga\n2.Giron\n3.Floridablanca\n4.Piedecuesta\n5.Lebrija\n\nSU ELECCION ES: ")
+    if eleccion == 1:
+        ciudad = "Bucaramanga"
+    elif eleccion == 2:
+        ciudad = "Giron"  
+    elif eleccion == 3:
+        ciudad = "Floridablanca"   
+    elif eleccion == 4:
+            ciudad = "Piedecuesta"   
+    elif eleccion == 5:
+        ciudad = "Lebrija"
+    else:
+        ciudad="Bucaramanga"
+                  
+    eleccion = random.randrange(1, 4)
+    if eleccion == 1:
+        categoria_cliente = "bronce"
+    elif eleccion == 2:
+        categoria_cliente = "plata"  
+    elif eleccion == 3:
+        categoria_cliente = "oro"   
+  
     usuario={
         "nombre":nombre,
         "documento":documento,
@@ -52,6 +73,8 @@ def agregar_usuario():
     guardar_actualizar_json(datos)
     print("\nusuario agregado con exito\n")
     
+# agregar_usuario()  
+    
 def modificar_usuario():
     while True:
         datos = leer_crear_json()
@@ -62,8 +85,22 @@ def modificar_usuario():
                     usuario["nombre"] = input("ingrese el nombre: ")
                     usuario["edad"]=input("ingrese la edad: ")
                     usuario["direccion"]=input("Ingrese la direccion: ")
-                    usuario["ciudad"]=input("ingrese la ciudad: ")
-                    usuario["categoria"]=input("ingrese la categoria: ")
+                    
+                    eleccion = input("\nEscoja la ciudad:\n1.Bucaramanga\n2.Giron\n3.Floridablanca\n4.Piedecuesta\n5.Lebrija\n\nSU ELECCION ES: ")
+                    if eleccion == 1:
+                        ciudad = "Bucaramanga"
+                    elif eleccion == 2:
+                        ciudad = "Giron"  
+                    elif eleccion == 3:
+                        ciudad = "Floridablanca"   
+                    elif eleccion == 4:
+                            ciudad = "Piedecuesta"   
+                    elif eleccion == 5:
+                        ciudad = "Lebrija"
+                    else:
+                        ciudad="Bucaramanga"
+                    
+                    usuario["ciudad"]=ciudad
                     usuario["contrasena"]=input("ingrese la contraseña a cambiar: ")
                     guardar_actualizar_json(datos)
                     print("\nusuario modificado con exito \n")
