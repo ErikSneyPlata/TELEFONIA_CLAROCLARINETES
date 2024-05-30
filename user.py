@@ -3,7 +3,7 @@ import modulo_ventas_admin
 
 def menu_users(doc):
     while True:
-        archivo = "ARCHIVOS\\user_index.txt"
+        archivo = "ARCHIVOS//user_index.txt"
         modulo_clientes_admin.lecturaArchivos(archivo)
         try:
             opt=int(input("Ingrese una opcion : "))
@@ -28,7 +28,7 @@ def perfil(doc):
     while True:
             for usuarios in datos:
                 if usuarios["documento"]==identificacion:
-                    print(f"Señor/a {usuarios["nombre"]}\n\nESTA ES LA INFORMACION QUE TENEMOS EN TU PERFIL SOBRE TI\n")
+                    print("Señor/a" +usuarios['nombre'] +"\n\nESTA ES LA INFORMACION QUE TENEMOS EN TU PERFIL SOBRE TI\n")
                     for clave,valor in usuarios.items():
                         print(f"{clave}: {valor}") 
                     return 
@@ -49,7 +49,7 @@ def facturas(doc):
                         precio_cliente=float(servicios["precio"])
                         precio_final=precio_final+precio_cliente
                     modulo_clientes_admin.interlineado()
-                    return print(f"Nombre: {usuario["nombre"]}\nDocumento: {usuario["documento"]}\nFactura de servicios: {precio_final}\n")
+                    return print("Nombre: "+usuario['nombre']+"\nDocumento: "+usuario['documento']+"\nFactura de servicios: "+precio_final+"\n")
         except KeyError:
             break 
             

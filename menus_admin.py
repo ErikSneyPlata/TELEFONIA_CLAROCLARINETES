@@ -8,7 +8,7 @@ import security
 #FUNCIONES DE MENUS PARA ADMIN
 def menu_admin():
     while True:
-        archivo = "ARCHIVOS\\admin_index.txt"
+        archivo = "ARCHIVOS//admin_index.txt"
         reutilizar.lecturaArchivos(archivo)
         try:
             opt=int(input("Ingrese una opcion : "))
@@ -30,7 +30,7 @@ def menu_admin():
  #ventas  
 def menuAdminVentas():
     while True:
-        archivo = "ARCHIVOS\\admin_ventas.txt"
+        archivo = "ARCHIVOS//admin_ventas.txt"
         reutilizar.lecturaArchivos(archivo)
         try:
             opt=int(input("Ingrese una opcion : "))
@@ -53,7 +53,7 @@ def menuAdminVentas():
 #cliente
 def menuAdminClientes():
     while True:
-        archivo = "ARCHIVOS\\admin_clientes.txt"
+        archivo = "ARCHIVOS//admin_clientes.txt"
         reutilizar.lecturaArchivos(archivo)
         try:
             opt=int(input("Ingrese una opcion : "))
@@ -97,7 +97,7 @@ def gestion_usuario():
 #estadisticas menu estadisticas
 def estadistica():
     while True:
-        archivo = "ARCHIVOS\\admin_estadisticas.txt"
+        archivo = "ARCHIVOS//admin_estadisticas.txt"
         reutilizar.lecturaArchivos(archivo)
         try:
             opt=int(input("Ingrese una opcion : "))

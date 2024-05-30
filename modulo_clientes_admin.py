@@ -11,12 +11,12 @@ def input_opcion():
     return n
     
 def interlineado():
-    ruta="ARCHIVOS\\interlineado.txt"
+    ruta="ARCHIVOS//interlineado.txt"
     lecturaArchivos(ruta)
     
 def leer_crear_json():
     try:
-        with open("json\\datos.json","r") as lectura:
+        with open("json//datos.json","r") as lectura:
             datos = json.load(lectura)
             return datos
     except FileNotFoundError:
@@ -24,7 +24,7 @@ def leer_crear_json():
         return datos
 
 def guardar_actualizar_json(datos):
-    with open("json\\datos.json","w") as guardar:
+    with open("json//datos.json","w") as guardar:
         json.dump(datos,guardar, indent=4)
     print("\nGUARDANDO...\n")
         
@@ -140,7 +140,7 @@ def eliminar_cliente():
 
 #2 perfiles de usuarios 
 def mostrar_usuarios():
-    with open("json\\datos.json","r") as lectura:
+    with open("json//datos.json","r") as lectura:
             datos = json.load(lectura)
     interlineado()
     for usuario in datos:
@@ -166,7 +166,7 @@ def facturas():
                         precio_cliente=float(servicios["precio"])
                         precio_final=precio_final+precio_cliente
                     interlineado()
-                    return print(f"Nombre: {usuario["nombre"]}\nDocumento: {usuario["documento"]}\nFactura de servicios: {precio_final}\n")      
+                    return print(f"Nombre: {usuario['nombre']}\nDocumento: {usuario['documento']}\nFactura de servicios: {precio_final}\n")      
             else:
                 interlineado()
                 return print("\nEL CLIENTE NO SE ENCUENTRA EN EL SISTEMA\n")
@@ -183,7 +183,7 @@ def generar_pqr():
             persona= input("ingrese el documento para verificar el usuario: ")
             for usuarios in datos:
                 if usuarios["documento"]==persona:
-                    print(f"Señor/a {usuarios["nombre"]}\n\nVALIDAREMOS SUS DATOS A CONTINUACION:\n")
+                    print(f"Señor/a {usuarios['nombre']}\n\nVALIDAREMOS SUS DATOS A CONTINUACION:\n")
                     for clave,valor in usuarios.items():
                         print(f"{clave}: {valor}")
                         

@@ -21,12 +21,12 @@ def input_opcion():
     return n
 
 def interlineado():
-    ruta="ARCHIVOS\\interlineado.txt"
+    ruta="ARCHIVOS//interlineado.txt"
     lecturaArchivos(ruta)
     
 def leer_crear_servicios():
     try:
-        with open("json\\ventas.json","r") as lectura:
+        with open("json//ventas.json","r") as lectura:
             datos = json.load(lectura)
             servicios = datos.get("servicios",[])
             return servicios
@@ -35,7 +35,7 @@ def leer_crear_servicios():
     
 def leer_crear_productos():
     try:
-        with open("json\\ventas.json","r") as lectura:
+        with open("json//ventas.json","r") as lectura:
             datos = json.load(lectura)
             productos = datos.get("productos",[])
             return productos
@@ -44,7 +44,7 @@ def leer_crear_productos():
 
 def guardar_actualizar_json(servicios, productos):
     datos = {"servicios": servicios, "productos": productos}
-    with open("json\\ventas.json", "w") as guardar:
+    with open("json//ventas.json", "w") as guardar:
         json.dump(datos, guardar, indent=4)
     print("\nGUARDANDO...\n")
 

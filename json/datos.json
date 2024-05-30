@@ -107,5 +107,14 @@
         "ciudad": "Bucaramanga",
         "categoria": "& C:/Users/Erikp/AppData/Local/Programs/Python/Python312/python.exe \"c:/Users/Erikp/OneDrive/Escritorio/GIT CAMPUS/Proyecto python/main.py\"",
         "contrasena": ""
+    },
+    {
+        "nombre": "Erik Sneyder Plata Arias",
+        "documento": "1005163108",
+        "edad": "23",
+        "direccion": "calle 16dn#10d-34",
+        "ciudad": "Bucaramanga",
+        "categoria": "oro",
+        "contrasena": ""
     }
 ]

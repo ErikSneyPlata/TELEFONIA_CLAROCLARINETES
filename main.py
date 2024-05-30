@@ -7,7 +7,7 @@ import security
 #menu principal-------------------------------------------------------------------
 
 while True:
-    ruta_bienvenida ="ARCHIVOS\\bienvenida.txt"
+    ruta_bienvenida ="ARCHIVOS//bienvenida.txt"
     funciones_cliente.lecturaArchivos(ruta_bienvenida)
     try:
         opt=int(input("Ingrese una opcion : "))
